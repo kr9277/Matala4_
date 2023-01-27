@@ -12,31 +12,30 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity {
     Button button;
     ImageView iv;
-
+    int i;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         button = findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Random rnd = new Random();
-                int num = rnd.nextInt(3) + 1;
-                button.setText("Click number: " + num);
-                switch (num) {
-                    case 1:
-                        iv.setImageResource(R.drawable.one);
-                        break;
-                    case 2:
-                        iv.setImageResource(R.drawable.cattow);
-                        break;
-                    case 3:
-                        iv.setImageResource(R.drawable.dogthree);
-                        break;
-                }
-            }
-        });
+        iv = findViewById(R.id.ImageView);
+    }
+    public void kk(View view){
+        Random rnd = new Random();
+        int num = rnd.nextInt(3) + 1;
+        button.setText("Click number: " + num);
+        switch (num) {
+            case 1:
+                iv.setImageResource(R.drawable.one);
+                break;
+            case 2:
+                iv.setImageResource(R.drawable.cattow);
+                break;
+            case 3:
+                iv.setImageResource(R.drawable.dogthree);
+                break;
+        }
     }
 }
+
